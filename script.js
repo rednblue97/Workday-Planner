@@ -1,7 +1,7 @@
-$(function () {
+//Displaying the current date and time
 
-//Display today's date on the display-home
-var todaysDate = moment().format('dddd, MMM Do YYYY, h:mm:ss a');
+$(function () {
+ let todaysDate = new Date();
 $("#currentDay").html(todaysDate);
 
 //Make the save btn assign the values of time of day and description
@@ -32,15 +32,15 @@ $("#hour-17 .description").val(localStorage.getItem("hour-17"));
 $("#hour-18 .description").val(localStorage.getItem("hour-18"));
 
 function timeRun() {
-    let currentTime = moment().hour();
+    let currentTime =  Date();
 
     //Provides a loop for each time block
 
     $(".time-block").each(function () {
-        let hrBlock = parseInt($(this).attr("id").split("hour")[1]);
+        let hrBlock = $("currentDay")
         console.log(currentTime);
 
-        hrBlock = parseInt(hrBlock);
+        hrBlock = parseInt();
         
         //If statements for past present and future calling CSS properties
 
